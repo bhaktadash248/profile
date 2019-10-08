@@ -1,3 +1,14 @@
+<?php
+$to = "dashlucky248@gmail.com";
+$subject = "My subject";
+$txt = "Hello world!";
+$headers = "From: webmaster@example.com" . "\r\n" .
+"CC: somebodyelse@example.com";
+
+mail($to,$subject,$txt,$headers);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -522,7 +533,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="card-body">
-                            <form method="post" action="/mail.php">
+                            <form name = "filepost" method="post" action="/">
                             <div class="p pb-3"><strong>Feel free to contact me </strong></div>
                             <div class="row mb-3">
                               <div class="col">
