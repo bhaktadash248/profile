@@ -1,3 +1,23 @@
+<!-- 
+  code for mail sending from contact us form
+ -->
+
+ <?php 
+if(isset($_POST['submit'])){
+    $to = "dashlucky248@gmail"; // this is your Email address
+    $from = $_POST['_replyto']; // this is the sender's Email address
+    $first_name = $_POST['name'];
+    $subject =  $_POST['Subject'];
+    $message = $first_name . " " . " wrote the following:" . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    mail($to,$subject,$message,$headers);
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    // You cannot use header and echo together. It's one or the other.
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -96,7 +116,7 @@
                 <div class="card-body">
                   <div class="h4 mt-0 title">About</div>
                   <p>Hello! I am Bhakta Dash. Fullstack Developer.</p>
-                  <p> More then 4 years of experience in Software Development, which includes bothFront-end and Back-end
+                  <p> More then 4 years of experience in Software Development, which includes both Front-end and Back-end
                   </p>
                   <p>Experience in working with Agile methodology.</p>
                   <p>Hands-on experience in Front-end development technologies HTML5, CSS3, JavaScript, React JS, AJAX &
@@ -540,7 +560,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="card-body">
-                          <form action="./mail_handler.php" method="post">
+                          <form action="/" method="post">
                             <div class="p pb-3"><strong>Feel free to contact me </strong></div>
                             <div class="row mb-3">
                               <div class="col">
